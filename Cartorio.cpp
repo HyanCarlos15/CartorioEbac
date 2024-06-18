@@ -161,7 +161,9 @@ int main()
 	 printf("Escolha a opção desejada no menu:\n\n");
 	 printf("\t1 - Registrar Nomes\n");  // Tomada de decisão conforme fluxograma
 	 printf("\t2 - Consultar Nomes\n");
-	 printf("\t3 - Deletar Nomes\n\n");  // final de menu
+	 printf("\t3 - Deletar Nomes\n\n"); 
+	 printf("\t4 - Deseja Sair?\n");
+	 printf("Opção: "); // final de menu
 	 printf("Seja muito bem vindo a EBAC!\n\n");
 	 printf("Qual opção você deseja!\n");
 	
@@ -183,6 +185,11 @@ int main()
 	  
 	  case 3:
 	  deletar();
+	  break;
+	  
+	  case 4:
+	  printf("Obrigado por utilizar o sistema\n");
+	  return 0;
 	  break;
 		
 	  default:
