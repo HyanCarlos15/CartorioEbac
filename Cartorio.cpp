@@ -124,10 +124,11 @@ int deletar()
     if(file == NULL)
     {
     printf("Este CPF não foi encontrado!.\n");
+    system("pause");
     
 	}
 	
-	system("pause");
+	
     
  	   		
 }
