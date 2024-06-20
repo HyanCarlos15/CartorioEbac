@@ -14,7 +14,7 @@ int registro()
     char cargo[60];
     // final da criação de usuarios
     
-	printf("digite o CPF a ser cadastrado: \n"); //coletando informação do usuario
+	printf("Digite o CPF a ser cadastrado: \n"); //coletando informação do usuario
 	scanf("%s", cpf); //%s refere-se a string
 	strcpy(arquivo, cpf); // responsavel por copiar os valores da string
 	
