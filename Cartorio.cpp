@@ -15,13 +15,14 @@ int registro()
     // final da criação de usuarios
     
 	printf("digite o CPF a ser cadastrado: \n"); //coletando informação do usuario
-	scanf("%s",cpf); //%s refere-se a string
-	strcpy(arquivo,cpf); // responsavel por copiar os valores da string
+	scanf("%s", cpf); //%s refere-se a string
+	strcpy(arquivo, cpf); // responsavel por copiar os valores da string
 	
 	FILE *file; // Cria arquivo
 	file= fopen(arquivo,"w"); //cria o arquivo e escrever w significa escrever
-	fprintf(file, "%s", cpf); // salva o arquivo da variavel
+	fprintf(file, cpf); // salva o arquivo da variavel
 	fclose(file); //fecha arquivo
+	
 	
 	
 	printf("Digite seu nascimento: \n");
@@ -82,33 +83,28 @@ int consulta()
 	setlocale(LC_ALL, "Portuguese");  // Definicao de linguagem (portugues)
 	
 	char cpf[40];
-	char conteudo[100];
+	char conteudo[200];
 	
-	printf("Digite o cpf a ser consultado: \n");
-	scanf("%s,",cpf);
+	printf("Digite o CPF a ser consultado: \n"); // RECEBENDO QUAL CPF A SER CONSULTADO
+	scanf("%s",cpf);
 	
 	FILE *file;
-	file = fopen(cpf, "r");
-	
-	
-	
-	
+	file = fopen(cpf,"r");
 	
 	if(file == NULL)
 	{
 	printf("Não foi possivel localizar o arquivo, cadastro não existe!. \n");
 	}
 	
-	while(fgets(conteudo, 100, file) != NULL)
+	while(fgets(conteudo, 200, file) != NULL)
 	{
 		printf("\nEssas são as informações do usuário: ");
 		printf("%s", conteudo);
 		printf("\n\n");
 		
-	system("pause");
-	
-		
 	}
+	
+	system("pause");
 	
 	
 	
@@ -118,8 +114,8 @@ int deletar()
 {
  	char cpf[40];
  	
- 	printf("digite o CPF a ser deletado\n");
- 	scanf("%s", cpf);
+ 	printf("Digite o CPF a ser deletado\n");
+ 	scanf("%s",cpf);
  	
     remove(cpf);
     FILE *file;
@@ -128,17 +124,13 @@ int deletar()
     if(file == NULL)
     {
     printf("Este CPF não foi encontrado!.\n");
-    system("pause");
-    
     
 	}
+	
+	system("pause");
     
- 	   
- 	
-		
+ 	   		
 }
-
-
 
 
 int main()
@@ -150,7 +142,7 @@ int main()
 	int comparacao;
 	
 	printf("### Cartório da EBAC ###\n\n");
-	printf("Login de administrador!\n\nDigite a sua senha: ");
+	printf("Login de Administrador!\n\nDigite a sua senha: ");
 	scanf("%s",senhadigitada);
 	
 	comparacao = strcmp(senhadigitada, "admin");
